@@ -1,7 +1,7 @@
 # Личный проект «Пиксель хантер» [![Build status][travis-image]][travis-url]
 
 * Студент: [Саян Жакупбеков](https://up.htmlacademy.ru/ecmascript/2/user/166288).
-* Наставник: `Неизвестно`.
+* Наставник: `---`.
 
 ---
 
