@@ -1,7 +1,7 @@
-const getElementFromTemplate = (stringMarkup) => {
-  const div = document.createElement(`div`);
-  div.innerHTML = stringMarkup;
-  return div.firstElementChild;
+const getElementFromTemplate = (template) => {
+  const container = document.createElement(`template`);
+  container.innerHTML = template;
+  return container;
 };
 
 export default getElementFromTemplate;

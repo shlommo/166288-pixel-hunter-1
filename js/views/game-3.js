@@ -6,8 +6,7 @@ import getElementFromTemplate from '../getElementFromTemplate';
 import render from '.././render';
 
 
-const template = `<div id="game-3">
-    ${header(1)}
+const template = `${header(1)}
     
     <div class="game">
       <p class="game__task">Найдите рисунок среди изображений</p>
@@ -38,8 +37,7 @@ const template = `<div id="game-3">
       </div>
     </div>
     
-    ${footer}
-  </div>`;
+    ${footer}`;
 
 const gameThree = getElementFromTemplate(template);
 
