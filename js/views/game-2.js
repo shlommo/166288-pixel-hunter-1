@@ -8,7 +8,7 @@ const renderGameTwo = (data) => {
     <p class="game__task">${data.description}</p>
     <form class="game__content  game__content--wide">
       <div class="game__option">
-        <img src="${data.questions.url}" alt="Option 1" width="705" height="455">
+        <img src="${data.questions.url}" alt="Option 1">
         <label class="game__answer  game__answer--photo">
           <input name="question1" type="radio" value="photo">
           <span>Фото</span>

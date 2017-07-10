@@ -9,7 +9,7 @@ const renderGameOne = (data) => {
 
     questions.forEach((item, idx) => {
       questionsStr += `<div class="game__option">
-        <img src="${item.url}" alt="Option ${idx + 1}" width="468" height="458">
+        <img src="${item.url}" alt="Option ${idx + 1}">
         <label class="game__answer game__answer--photo">
           <input name="question${idx + 1}" type="radio" value="photo">
           <span>Фото</span>
@@ -33,6 +33,27 @@ const renderGameOne = (data) => {
 
 
   render(getElementFromTemplate(template), `.game__container`);
+
+  // const optimizeImages = () => {
+  //   const images = document.querySelectorAll(`.game__option img`);
+  //
+  //   for (let img of images) {
+  //     const gameOption = img.parentNode,
+  //       gameOptionWidth = gameOption.clientWidth,
+  //       gameOptionHeight = gameOption.clientHeight;
+  //
+  //     if (img.clientHeight < gameOptionHeight && gameOptionHeight > gameOptionWidth) {
+  //       img.style.height = gameOptionHeight + `px`;
+  //     } else if(img.clientHeight < gameOptionHeight && gameOptionHeight < gameOptionWidth) {
+  //       img.style.width = gameOptionWidth + `px`;
+  //     }
+  //
+  //     console.log(img.clientHeight > gameOptionHeight)
+  //   }
+  // };
+
+  // optimizeImages();
+
 
   const listenQuestions = function (func, ...args) {
     const checked = {};
