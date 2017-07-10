@@ -1,3 +1,4 @@
+import {greeting as greeting} from '.././data';
 import header from './header';
 import footer from './footer';
 import renderGreeting from './greeting';
@@ -5,8 +6,7 @@ import getElementFromTemplate from '../getElementFromTemplate';
 import render from '.././render';
 
 
-const template = `<div id="result">
-    ${header()}
+const template = `${header()}
     
     <div class="result">
       <h1>Победа!</h1>
@@ -109,8 +109,7 @@ const template = `<div id="result">
       </table>
     </div>
     
-    ${footer}
-  </div>`;
+    ${footer}`;
 
 const gameResult = getElementFromTemplate(template);
 
@@ -123,7 +122,7 @@ const renderResult = () => {
   headerBack.addEventListener(`click`, (event) => {
     event.preventDefault();
 
-    renderGreeting();
+    renderGreeting(greeting);
   });
 
 };

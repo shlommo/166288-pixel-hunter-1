@@ -1,19 +1,14 @@
-import header from './header';
-import footer from './footer';
-import renderGreeting from './greeting';
-import renderGameThree from './game-3';
 import getElementFromTemplate from '../getElementFromTemplate';
 import render from '.././render';
+import gameContoroller from './gameController';
 
 
-const template = `<div id="game-2">
-  ${header(1)}
-  
-  <div class="game">
-    <p class="game__task">Угадай, фото или рисунок?</p>
+const renderGameTwo = (data) => {
+  const template = `
+    <p class="game__task">${data.description}</p>
     <form class="game__content  game__content--wide">
       <div class="game__option">
-        <img src="http://placehold.it/705x455" alt="Option 1" width="705" height="455">
+        <img src="${data.questions.url}" alt="Option 1" width="705" height="455">
         <label class="game__answer  game__answer--photo">
           <input name="question1" type="radio" value="photo">
           <span>Фото</span>
@@ -23,32 +18,9 @@ const template = `<div id="game-2">
           <span>Рисунок</span>
         </label>
       </div>
-    </form>
-    <div class="stats">
-      <ul class="stats">
-        <li class="stats__result stats__result--wrong"></li>
-        <li class="stats__result stats__result--slow"></li>
-        <li class="stats__result stats__result--fast"></li>
-        <li class="stats__result stats__result--correct"></li>
-        <li class="stats__result stats__result--wrong"></li>
-        <li class="stats__result stats__result--unknown"></li>
-        <li class="stats__result stats__result--slow"></li>
-        <li class="stats__result stats__result--unknown"></li>
-        <li class="stats__result stats__result--fast"></li>
-        <li class="stats__result stats__result--unknown"></li>
-      </ul>
-    </div>
-  </div>
-  
-  ${footer}
-  </div>`;
+    </form>`;
 
-const gameTwo = getElementFromTemplate(template);
-
-const renderGameTwo = () => {
-  render(gameTwo);
-
-  const headerBack = document.querySelector(`.header__back`);
+  render(getElementFromTemplate(template), `.game__container`);
 
   const listenQuestions = function (func, ...args) {
     const checked = {};
@@ -80,14 +52,7 @@ const renderGameTwo = () => {
     }
   };
 
-  listenQuestions(renderGameThree, `[name="question1"]`);
-
-  headerBack.addEventListener(`click`, (event) => {
-    event.preventDefault();
-
-    renderGreeting();
-  });
-
+  listenQuestions(gameContoroller, `[name="question1"]`);
 };
 
 export default renderGameTwo;
