@@ -1,6 +1,7 @@
 @import "fonts";
 
-.game {
+.game,
+.game__container {
   display: flex;
   flex-direction: column;
   justify-content: space-between;

@@ -1,9 +1,11 @@
+import {games as games} from '.././data';
 import header from './header';
 import footer from './footer';
-import renderGameOne from './game-1';
+import renderGame from './game';
 import renderGreeting from './greeting';
 import getElementFromTemplate from '../getElementFromTemplate';
 import render from '.././render';
+import {greeting as greeting} from '.././data';
 
 
 const template = `<div id="rules">
@@ -37,6 +39,7 @@ const renderRules = () => {
   const rulesInput = document.querySelector(`.rules__input`);
   const rulesButton = document.querySelector(`.rules__button`);
   const rulesForm = document.querySelector(`.rules__form`);
+
   const headerBack = document.querySelector(`.header__back`);
 
 
@@ -51,13 +54,13 @@ const renderRules = () => {
   rulesForm.addEventListener(`submit`, (event) => {
     event.preventDefault();
 
-    renderGameOne();
+    renderGame(games);
   });
 
   headerBack.addEventListener(`click`, (event) => {
     event.preventDefault();
 
-    renderGreeting();
+    renderGreeting(greeting);
   });
 };
 

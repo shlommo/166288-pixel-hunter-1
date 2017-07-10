@@ -1,8 +1,8 @@
+import {greeting as greeting} from '.././data';
 import renderGreeting from './greeting';
 import footer from './footer';
 import getElementFromTemplate from '../getElementFromTemplate';
 import render from '.././render';
-
 
 const template = `<div id="main" class="central__content">
     <div id="intro" class="intro">
@@ -20,7 +20,7 @@ const renderIntro = () => {
   const introAsterisk = document.querySelector(`.intro__asterisk`);
 
   introAsterisk.addEventListener(`click`, () => {
-    renderGreeting();
+    renderGreeting(greeting);
   });
 };
 

@@ -1,3 +1,4 @@
+import {greeting as greeting} from '.././data';
 import header from './header';
 import footer from './footer';
 import renderGreeting from './greeting';
@@ -121,7 +122,7 @@ const renderResult = () => {
   headerBack.addEventListener(`click`, (event) => {
     event.preventDefault();
 
-    renderGreeting();
+    renderGreeting(greeting);
   });
 
 };
