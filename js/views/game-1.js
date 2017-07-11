@@ -37,6 +37,7 @@ const renderGameOne = (data) => {
   // const optimizeImages = () => {
   //   const images = document.querySelectorAll(`.game__option img`);
   //
+
   //   for (let img of images) {
   //     const gameOption = img.parentNode,
   //       gameOptionWidth = gameOption.clientWidth,
